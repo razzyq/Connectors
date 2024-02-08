@@ -21,6 +21,26 @@ deployments:
         description: This is the output topic for realtime CSV data
         required: true
         value: realtime-csv-data
+  - name: Starter transformation
+    application: Starter transformation
+    deploymentType: Service
+    version: d1223074b89e249999a7d52a8b87c624e76623b1
+    resources:
+      cpu: 200
+      memory: 500
+      replicas: 1
+    desiredStatus: Running
+    variables:
+      - name: input
+        inputType: InputTopic
+        description: This is the input topic for data to be downsampled
+        required: true
+        value: realtime-csv-data
+      - name: output
+        inputType: OutputTopic
+        description: This is the output topic for downsampled data
+        required: true
+        value: airpassengers
 
 # This section describes the Topics of the data pipeline
 topics:
