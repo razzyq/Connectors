@@ -5,7 +5,21 @@ metadata:
   version: 1.0
 
 # This section describes the Deployments of the data pipeline
-deployments: []
+deployments:
+  - name: Demo Data
+    application: Demo Data
+    deploymentType: Job
+    version: fe32a756b3c73f39c0df6efa4703c15d914180c1
+    resources:
+      cpu: 200
+      memory: 200
+      replicas: 1
+    variables:
+      - name: Topic
+        inputType: OutputTopic
+        description: Name of the output topic to write into
+        required: true
+        value: f1-data
 
 # This section describes the Topics of the data pipeline
 topics:
