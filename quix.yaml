@@ -5,7 +5,22 @@ metadata:
   version: 1.0
 
 # This section describes the Deployments of the data pipeline
-deployments: []
+deployments:
+  - name: Real-time CSV
+    application: Real-time CSV
+    deploymentType: Service
+    version: 5cac2cf7c5f5a165fc339509de4fcd12f6bec0b7
+    resources:
+      cpu: 200
+      memory: 500
+      replicas: 1
+    desiredStatus: Running
+    variables:
+      - name: output
+        inputType: OutputTopic
+        description: This is the output topic for realtime CSV data
+        required: true
+        value: realtime-csv-data
 
 # This section describes the Topics of the data pipeline
 topics:
