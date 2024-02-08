@@ -4,8 +4,8 @@ variables:
   - name: Topic
     inputType: OutputTopic
     description: Name of the output topic to write into
-    defaultValue: f1-data
-    required: true
+    defaultValue: airpassengers
+    required: false
 dockerfile: dockerfile
 runEntryPoint: main.py
 defaultFile: main.py
