@@ -1,0 +1,16 @@
+name: Starter transformation
+language: csharp
+variables:
+  - name: input
+    inputType: InputTopic
+    description: This is the input topic for data to be downsampled
+    defaultValue: realtime-csv-data
+    required: true
+  - name: output
+    inputType: OutputTopic
+    description: This is the output topic for downsampled data
+    defaultValue: ''
+    required: true
+dockerfile: dockerfile
+runEntryPoint: HelloWorldModel.csproj
+defaultFile: HelloWorldModel/Program.cs
